@@ -40,7 +40,7 @@
                             <td><?= $smn['is_active']; ?></td>
                             <td>
                                 <a href="" class="badge badge-warning">edit</a>
-                                <a href="<?= base_url('menu/delete/'); ?><?= $smn['id'] ?>" class="badge badge-danger" onclick="return confirm('Sure?');">delete</a>
+                                <a href="<?= base_url('menu/deleteSubMenu/') . $smn['id']; ?>" class="badge badge-danger" onclick="return confirm('Sure?');">delete</a>
                             </td>
                         </tr>
                     <?php $no++;

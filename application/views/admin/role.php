@@ -10,25 +10,26 @@
 
             <?= $this->session->flashdata('message'); ?>
 
-            <a href="" class="btn btn-primary mb-3" data-toggle="modal" data-target="#newMenuModal">Add New Menu</a>
+            <a href="" class="btn btn-primary mb-3" data-toggle="modal" data-target="#newRoleModal">Add New Role</a>
 
             <table class="table table-hover">
                 <thead>
                     <tr>
                         <th scope="col">#</th>
-                        <th scope="col">Menu</th>
+                        <th scope="col">Role</th>
                         <th scope="col">Action</th>
                     </tr>
                 </thead>
                 <tbody>
                     <?php $no = 1;
-                    foreach ($menu as $mn) : ?>
+                    foreach ($role as $rl) : ?>
                         <tr>
                             <th scope="row"><?= $no; ?></th>
-                            <td><?= $mn['menu']; ?></td>
+                            <td><?= $rl['role']; ?></td>
                             <td>
+                                <a href="<?= base_url('admin/roleaccess/') . $rl['id']; ?>" class="badge badge-success">access</a>
                                 <a href="" class="badge badge-warning">edit</a>
-                                <a href="<?= base_url('menu/deleteMenu/') . $mn['id']; ?>" class="badge badge-danger" onclick="return confirm('Sure?');">delete</a>
+                                <a href="<?= base_url('menu/deleteRole/') . $rl['id']; ?>" class="badge badge-danger" onclick="return confirm('Sure?');">delete</a>
                             </td>
                         </tr>
                     <?php $no++;
@@ -45,19 +46,19 @@
 <!-- End of Main Content -->
 
 <!-- Modal -->
-<div class="modal fade" id="newMenuModal" tabindex="-1" role="dialog" aria-labelledby="newMenuModalLabel" aria-hidden="true">
+<div class="modal fade" id="newRoleModal" tabindex="-1" role="dialog" aria-labelledby="newRoleModalLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="newMenuModalLabel">Add New Menu</h5>
+                <h5 class="modal-title" id="newRoleModalLabel">Add New Role</h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
-            <form action="<?= base_url('menu') ?>" method="post">
+            <form action="<?= base_url('admin/role') ?>" method="post">
                 <div class="modal-body">
                     <div class="form-group">
-                        <input type="text" class="form-control" id="menu" name="menu" placeholder="Menu Name">
+                        <input type="text" class="form-control" id="role" name="role" placeholder="Role Name">
                     </div>
                 </div>
                 <div class="modal-footer">

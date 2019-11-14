@@ -50,13 +50,13 @@
                 <?php else : ?>
                 <li class="nav-item">
                 <?php endif; ?>
-                <a class="nav-link" href="<?= base_url($smn['url']); ?>">
+                <a class="nav-link pb-0" href="<?= base_url($smn['url']); ?>">
                     <i class="<?= $smn['icon']; ?>"></i>
                     <span><?= $smn['title']; ?></span></a>
                 </li>
             <?php endforeach ?>
 
-            <hr class="sidebar-divider">
+            <hr class="sidebar-divider mt-3">
 
         <?php endforeach ?>
 
