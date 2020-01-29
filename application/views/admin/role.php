@@ -29,7 +29,7 @@
                             <td>
                                 <a href="<?= base_url('admin/roleaccess/') . $rl['id']; ?>" class="badge badge-success">access</a>
                                 <a href="" class="badge badge-warning">edit</a>
-                                <a href="<?= base_url('menu/deleteRole/') . $rl['id']; ?>" class="badge badge-danger" onclick="return confirm('Sure?');">delete</a>
+                                <a href="<?= base_url('admin/deleteRole/') . $rl['id']; ?>" class="badge badge-danger" onclick="return confirm('Sure?');">delete</a>
                             </td>
                         </tr>
                     <?php $no++;
